@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/images/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis</h1>
+        <form method="POST" action="/predict">
+            <label for="user_input">Enter text:</label>
+            <input type="text" id="user_input" name="user_input" required placeholder="Type your text here...">
+            <button type="submit">Predict Sentiment</button>
+        </form>
+        {% if prediction_text %}
+            <h2>Prediction Result:</h2>
+            <p>{{ user_input }}</p>
+            <div class="result {{ prediction_text.lower() }}">{{ prediction_text.split(': ')[1] }}</div> 
+        {% endif %}
+    </div>
+</body>
+</html>
