@@ -8,3 +8,4 @@ scikit-learn
 joblib
 imbalanced-learn
 nltk
+gunicorn
